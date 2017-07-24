@@ -1,4 +1,3 @@
-// src/index.ts
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { Component } from 'react';
@@ -31,22 +30,19 @@ interface IState { }
 class SplashContainer extends Component<IProps, IState> {
 
     private handleNext() {
-
         this.props.navigation.navigate('Login');
     }
 
     render() {
         console.log('reach here');
         return (
-            <View>
-                <Image source={ Images.cats } />
+            <View style={styles.container}>
                 <Button
-
-                    icon={{name: 'home', size: 32}}
-                    buttonStyle={{backgroundColor: 'red', borderRadius: 10}}
-                    textStyle={{textAlign: 'center'}}
-                    title={`Login`}
-                    onPress={ () => this.handleNext() }
+                  icon={{name: 'home', size: 32}}
+                  buttonStyle={{backgroundColor: '#3AC6AA', borderRadius: 10}}
+                  textStyle={{textAlign: 'center'}}
+                  title={`Login`}
+                  onPress={ () => this.handleNext() }
                 />
             </View>
         );
@@ -55,9 +51,9 @@ class SplashContainer extends Component<IProps, IState> {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#000000',
-        paddingVertical: '10'
+      flex: 1,
+      backgroundColor: 'white',
+      justifyContent: 'center'
     }
 });
 

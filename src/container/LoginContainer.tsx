@@ -14,13 +14,12 @@ import {
 import {
     StackNavigator
 } from 'react-navigation';
-
-import { Button } from 'react-native-elements';
+import { Button, FormInput, FormLabel, FormValidationMessage } from 'react-native-elements';
 import * as ReactNativeElements from 'react-native-elements';
 import * as ReactNavigation from 'react-navigation';
 
 import { HeaderContainer } from './HeaderContainer';
-
+import { FormView } from './FormView';
 
 interface IProps extends ReactNavigation.NavigationScreenProps<any> { }
 
@@ -30,34 +29,39 @@ interface IState { }
 class LoginContainer extends Component<IProps, IState> {
 
     private handleNext() {
-
         this.props.navigation.navigate('Auth');
     }
 
     render() {
 
         return (
-            <View style={styles.container}>
-                <Text>Something something login</Text>
-                <Button
+          <View style={styles.container}>
+            <FormLabel>Email/Username</FormLabel>
+            <FormInput placeholder='email'/>
 
-                    icon={{name: 'settings', size: 32}}
-                    buttonStyle={{backgroundColor: 'red', borderRadius: 10}}
-                    textStyle={{textAlign: 'center'}}
-                    title={`Auth`}
-                    onPress={ () => this.handleNext() }
-                />
-            </View>
+            <FormLabel>Password</FormLabel>
+            <FormInput placeholder='password'/>
+
+            <Button
+              icon={{name: 'settings', size: 32}}
+              buttonStyle={{backgroundColor: '#3AC6AA', borderRadius: 10, margin: 10}}
+              textStyle={{textAlign: 'center'}}
+              title={`Auth`}
+              onPress={ () => this.handleNext() }
+            />
+          </View>
         );
     }
 }
 
+// <FormView dateTaker={false} />
+
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex:      1,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: 'white'
     }
 });
 

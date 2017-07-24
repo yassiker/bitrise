@@ -38,7 +38,7 @@ class HeaderContainer extends Component<IProps, IState> {
         const { title } = this.props;
 
         return (
-            <Header backgroundColor='#1976d2'
+            <Header backgroundColor='#1976d2' style = {{marginBottom: 5}}
                 leftComponent={<Icon name='menu' color='#fff' onPress={() => this.handleMenuPress()} />}
                 centerComponent={{ text: title, style: { color: '#fff' } }}
                 rightComponent={<Icon name='home' color='#ffff'  onPress={() => this.handleHomePress()} />}
