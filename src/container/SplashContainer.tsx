@@ -36,7 +36,7 @@ class SplashContainer extends Component<IProps, IState> {
     }
 
     render() {
-
+        console.log('reach here');
         return (
             <View>
                 <Image source={ Images.cats } />

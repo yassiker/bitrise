@@ -12,7 +12,6 @@
 	},
 	"dependencies": {
 		"@types/react-native-elements": "^0.13.2",
-		"@types/react-navigation": "^1.0.15",
 		"mobx": "^3.2.1",
 		"mobx-react": "^4.2.2",
 		"react": "16.0.0-alpha.12",
@@ -22,6 +21,7 @@
 		"react-navigation": "^1.0.0-beta.11"
 	},
 	"devDependencies": {
+		"@types/react-navigation": "^1.0.15",
 		"@types/jest": "^20.0.4",
 		"@types/react": "^15.0.38",
 		"@types/react-native": "^0.46.6",
