@@ -41,6 +41,14 @@ buck-out/
 \.buckd/
 *.keystore
 
+# TypeScript
+#
+build/
+
+# Jest
+#
+.jest/
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the

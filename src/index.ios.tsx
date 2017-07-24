@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-export default class bitrise extends React.Component<object, object> {
+export default class Bitrise extends React.Component<object, object> {
   render() {
     return (
       <View style={styles.container}>
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('bitrise', () => bitrise);
+AppRegistry.registerComponent('bitrise', () => Bitrise);
