@@ -1,29 +1,34 @@
 // src/index.ts
-import * as React from 'react';
-import { observer } from 'mobx-react';
-import { Component } from 'react';
+import * as React from 'react'
+import { observer } from 'mobx-react'
+import { Component } from 'react'
 import {
     StyleSheet,
     Text,
     View,
     ViewStyle,
     TextStyle
-} from 'react-native';
+} from 'react-native'
 
 import {
     StackNavigator
-} from 'react-navigation';
+} from 'react-navigation'
 
-import { Button } from 'react-native-elements';
-import * as ReactNativeElements from 'react-native-elements';
-import * as ReactNavigation from 'react-navigation';
+import { Button } from 'react-native-elements'
+import * as ReactNativeElements from 'react-native-elements'
+import * as ReactNavigation from 'react-navigation'
 
-import { HeaderContainer } from './HeaderContainer';
-import Images from '../Images';
+import { HeaderContainer } from './HeaderContainer'
+import Images from '../Images'
 
 interface IProps extends ReactNavigation.NavigationScreenProps<any> { }
 
 interface IState { }
+
+interface RoomInterface {
+  name: string
+  avatar_url: string
+}[]
 
 @observer
 class HomeContainer extends Component<IProps, IState> {
@@ -33,8 +38,12 @@ class HomeContainer extends Component<IProps, IState> {
         // other configurations
     };
 
+    _handlePressButton = () => {
+      this.props.navigation.navigate('RoomReserver');
+    }
+
     render() {
-      const list = [
+      const listofRooms = [
         {
           name: 'Room 1',
           avatar_url: Images.room1,
@@ -50,14 +59,15 @@ class HomeContainer extends Component<IProps, IState> {
         return (
           <View>
             <HeaderContainer navigation={this.props.navigation} title='Home' />
-            <ReactNativeElements.List containerStyle={{marginBottom: 20}}>
+            <ReactNativeElements.List containerStyle={{top: 50}}>
             {
-              list.map((l: any, i: number) => (
+              listofRooms.map((l: any, i: number) => (
                 <ReactNativeElements.ListItem
                   roundAvatar
                   avatar={l.avatar_url}
                   key={i}
                   title={l.name}
+                  onPress = {() => this._handlePressButton()}
                 />
               ))
             }

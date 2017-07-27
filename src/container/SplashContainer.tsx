@@ -22,12 +22,18 @@ import { HeaderContainer } from './HeaderContainer';
 
 import Images from '../Images';
 
+import Api from '../api';
+
 interface IProps extends ReactNavigation.NavigationScreenProps<any> { }
 
 interface IState { }
 
 @observer
 class SplashContainer extends Component<IProps, IState> {
+
+    componentWillMount() {
+        Api.fetchEvents()
+    }
 
     private handleNext() {
         this.props.navigation.navigate('Login');

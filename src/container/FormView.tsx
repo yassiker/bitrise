@@ -1,3 +1,5 @@
+import { inject } from 'mobx-react/native';
+import { inject as store } from 'mobx-react/custom';
 /*
 This is a view i use in a test app,
 very useful to list all the use cases
